@@ -17,8 +17,12 @@ class Test < ActiveRecord::Base
   def as_json(options)
     run = super(options)
     run[:url] = self.url
-    run[:diff_thumbnail_url] = screenshot_diff_thumbnail.url
-    run[:diff_full_url] = screenshot_diff.url
+    run[:screenshot_url] = screenshot.url
+    run[:screenshot_thumbnail_url] = screenshot_thumbnail.url
+    run[:screenshot_baseline_url] = screenshot_baseline.url
+    run[:screenshot_baseline_thumbnail_url] = screenshot_baseline_thumbnail.url
+    run[:screenshot_diff_url] = screenshot_diff.url
+    run[:screenshot_diff_thumbnail_url] = screenshot_diff_thumbnail.url
     return run
   end
 
