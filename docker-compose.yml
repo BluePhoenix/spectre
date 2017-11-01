@@ -5,7 +5,7 @@ services:
     image: wearefriday/spectre
     build: .
     ports:
-     - "3000:3000"
+     - "8000:3000"
     links:
      - db
     environment:
